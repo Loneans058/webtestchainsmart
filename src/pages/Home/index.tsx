@@ -7,6 +7,7 @@ import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
 
 const Contact = lazy(() => import("../../components/ContactForm"));
+const VideoPlayer = lazy(() => import("../../components/VideoPlayer"));
 const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
 const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
@@ -16,12 +17,16 @@ const Home = () => {
   return (
     <Container>
       <ScrollToTop />
+       <VideoPlayer
+        videoUrl="https://www.youtube.com/watch?v=MepudBrz2K8"
+        width="100%"
+        height="100%"
+      />
       <ContentBlock
         direction="right"
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
-        video="https://www.youtube.com/watch?v=MepudBrz2K8"
         icon="developer.svg"
         id="intro"
       />
