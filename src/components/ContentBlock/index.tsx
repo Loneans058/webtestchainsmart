@@ -82,6 +82,7 @@ const ContentBlock = ({
                             title: string;
                             content: string;
                             icon: string;
+                            video?: string;
                           },
                           id: number
                         ) => {

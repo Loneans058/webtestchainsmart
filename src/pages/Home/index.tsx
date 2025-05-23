@@ -21,6 +21,7 @@ const Home = () => {
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
+        video="https://www.youtube.com/watch?v=MepudBrz2K8"
         icon="developer.svg"
         id="intro"
       />

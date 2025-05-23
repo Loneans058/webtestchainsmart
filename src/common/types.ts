@@ -11,6 +11,13 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
+export interface HeaderButtonProps {
+  color?: string;
+  name?: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}
+
 export interface SvgIconProps {
   src: string;
   width: string;

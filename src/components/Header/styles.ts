@@ -80,6 +80,24 @@ export const Label = styled("span")`
 export const Outline = styled(MenuOutlined)`
   font-size: 22px;
 `;
+export const LanguageSwitch = styled("div")`
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+`;
+
+export const LanguageSwitchContainer = styled("div")`
+  display: flex;
+  justify-content: space-between;
+  width: 85px;
+`;
 
 export const Span = styled("span")`
   cursor: pointer;
