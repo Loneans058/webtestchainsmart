@@ -17,10 +17,12 @@ const Home = () => {
   return (
     <Container>
       <ScrollToTop />
-       <VideoPlayer
-        videoUrl="https://www.youtube.com/watch?v=MepudBrz2K8"
-        width="100%"
-        height="100%"
+      <VideoPlayer
+        url="https://www.youtube.com/watch?v=6NJi9R1X5DI"
+        overlayText1="Protecting Your Data Through 
+Decentralization"
+        overlayText2="ChainSmart Platform"
+        overlayImage="img/svg/developer.svg"
       />
       <ContentBlock
         direction="right"
