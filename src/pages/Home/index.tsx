@@ -18,7 +18,7 @@ const Home = () => {
     <Container>
       <ScrollToTop />
       <VideoPlayer
-        url="https://www.youtube.com/watch?v=6NJi9R1X5DI"
+        url="vid/blockchain.mp4"
         overlayText1="Protecting Your Data Through 
 Decentralization"
         overlayText2="ChainSmart Platform"

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import { motion } from 'framer-motion';
+import Fade from 'react-awesome-reveal';
 
 interface VideoPlayerProps {
   url: string;
@@ -13,6 +14,12 @@ interface VideoPlayerProps {
   overlayText1?: string;
   overlayText2?: string;
   overlayImage?: string;
+}
+
+interface CardProps {
+  image: string;
+  title: string;
+  description: string;
 }
 
 const wrapperStyle: React.CSSProperties = {
@@ -68,13 +75,60 @@ const fadeVariant = {
   }),
 };
 
+const cardWrapper: React.CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "2rem",
+  padding: "4rem 1rem",
+  background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, #e0e8ff 100%)",
+};
+
+const cardStyle: React.CSSProperties = {
+  background: "rgba(255, 255, 255, 0.3)",
+  backdropFilter: "blur(20px)",
+  borderRadius: "1rem",
+  padding: "2rem",
+  width: "300px",
+  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+  color: "#333",
+  textAlign: "left",
+};
+
+const imageStyle: React.CSSProperties = {
+  width: "80px",
+  height: "80px",
+  objectFit: "contain",
+  marginBottom: "1rem",
+};
+
+const titleStyle: React.CSSProperties = {
+  fontSize: "1.2rem",
+  fontWeight: "bold",
+  marginBottom: "0.5rem",
+};
+
+const descriptionStyle: React.CSSProperties = {
+  fontSize: "0.95rem",
+  lineHeight: 1.5,
+  color: "#444",
+};
+
+const Card: React.FC<CardProps> = ({ image, title, description }) => (
+  <div style={cardStyle}>
+    <img src={image} alt={title} style={imageStyle} />
+    <div style={titleStyle}>{title}</div>
+    <div style={descriptionStyle}>{description}</div>
+  </div>
+);
+
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
   url,
   width = '100%',
   height = '100%',
   playing = true,
-  controls = true,
-  loop = false,
+  controls = false,
+  loop = true,
   muted = true,
   overlayText1,
   overlayText2,
@@ -131,6 +185,18 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           )}
         </div>
       )}
+      {/* Blue gradient dot background */}
+      <div
+        style={{
+          position: "absolute",
+          top: "100vh",
+          width: "100%",
+          height: "500px",
+          background: "radial-gradient(circle, rgba(0,123,255,0.4) 0%, transparent 70%)",
+          zIndex: 0,
+        }}
+      />
+     
     </div>
   );
 };
