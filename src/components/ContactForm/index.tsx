@@ -1,72 +1,57 @@
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
-import { Slide } from "react-awesome-reveal";
-import { ContactProps, ValidationTypeProps } from "./types";
-import { useForm } from "../../common/utils/useForm";
-import validate from "../../common/utils/validationRules";
-import { Button } from "../../common/Button";
-import Block from "../Block";
-import Input from "../../common/Input";
-import TextArea from "../../common/TextArea";
-import { ContactContainer, FormGroup, Span, ButtonContainer } from "./styles";
+import styled from "styled-components";
 
-const Contact = ({ title, content, id, t }: ContactProps) => {
-  const { values, errors, handleChange, handleSubmit } = useForm(validate);
+const Container = styled.div`
+  background: linear-gradient(135deg, #e0edff 0%, #f9fbff 100%);
+  text-align: center;
+  
+`;
 
-  const ValidationType = ({ type }: ValidationTypeProps) => {
-    const ErrorMessage = errors[type as keyof typeof errors];
-    return <Span>{ErrorMessage}</Span>;
-  };
+const Title = styled.h1`
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #3b3b3b;
+  margin-bottom: 2rem;
+`;
 
+const ImageBox = styled.div`
+  background: white;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+`;
+
+const LogoImage = styled.img`
+  width: 300px;
+  max-width: 100%;
+`;
+
+const RingImage = styled.img`
+  width: 100%;
+  max-width: 500px;
+`;
+
+const KnowMore = () => {
   return (
-    <ContactContainer id={id}>
-      <Row justify="space-between" align="middle">
-        <Col lg={12} md={11} sm={24} xs={24}>
-          <Slide direction="left" triggerOnce>
-            <Block title={title} content={content} />
-          </Slide>
+    <Container>
+      <Row align="middle" justify="center" gutter={[48, 48]}>
+        <Col xs={24} md={12}>
+          <RingImage src="/img/svg/your-ring-graphic.png" alt="Ring graphic" />
         </Col>
-        <Col lg={12} md={12} sm={24} xs={24}>
-          <Slide direction="right" triggerOnce>
-            <FormGroup autoComplete="off" onSubmit={handleSubmit}>
-              <Col span={24}>
-                <Input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={values.name || ""}
-                  onChange={handleChange}
-                />
-                <ValidationType type="name" />
-              </Col>
-              <Col span={24}>
-                <Input
-                  type="text"
-                  name="email"
-                  placeholder="Your Email"
-                  value={values.email || ""}
-                  onChange={handleChange}
-                />
-                <ValidationType type="email" />
-              </Col>
-              <Col span={24}>
-                <TextArea
-                  placeholder="Your Message"
-                  value={values.message || ""}
-                  name="message"
-                  onChange={handleChange}
-                />
-                <ValidationType type="message" />
-              </Col>
-              <ButtonContainer>
-                <Button name="submit">{t("Submit")}</Button>
-              </ButtonContainer>
-            </FormGroup>
-          </Slide>
+        <Col xs={24} md={12}>
+          <Title>Want to know more</Title>
+          <ImageBox>
+            <LogoImage src="/img/svg/lock-graphic.png" alt="Lock graphic" />
+          </ImageBox>
         </Col>
       </Row>
-    </ContactContainer>
+      <p style={{ fontSize: "1.25rem", color: "#2a50da", marginTop: "2rem" }}>
+        Contact us at <strong>ChainSmart</strong> to learn how
+      </p>
+    </Container>
   );
 };
 
-export default withTranslation()(Contact);
+export default withTranslation()(KnowMore);

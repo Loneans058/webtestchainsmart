@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import { motion } from 'framer-motion';
-import Fade from 'react-awesome-reveal';
 
 interface VideoPlayerProps {
   url: string;
@@ -24,7 +23,7 @@ interface CardProps {
 
 const wrapperStyle: React.CSSProperties = {
   position: 'relative',
-  paddingTop: '66.66%', // 3:2 aspect ratio (larger than 16:9)
+  paddingTop: '66.66%',
   width: '100%',
 };
 
@@ -75,21 +74,12 @@ const fadeVariant = {
   }),
 };
 
-const cardWrapper: React.CSSProperties = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  gap: "2rem",
-  padding: "4rem 1rem",
-  background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, #e0e8ff 100%)",
-};
-
 const cardStyle: React.CSSProperties = {
   background: "rgba(255, 255, 255, 0.3)",
   backdropFilter: "blur(20px)",
   borderRadius: "1rem",
   padding: "2rem",
-  width: "300px",
+  width: "260px",
   boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
   color: "#333",
   textAlign: "left",
@@ -103,15 +93,35 @@ const imageStyle: React.CSSProperties = {
 };
 
 const titleStyle: React.CSSProperties = {
-  fontSize: "1.2rem",
+  fontSize: "0.9rem",
   fontWeight: "bold",
   marginBottom: "0.5rem",
 };
 
 const descriptionStyle: React.CSSProperties = {
-  fontSize: "0.95rem",
+  fontSize: "0.6rem",
   lineHeight: 1.5,
   color: "#444",
+};
+
+const playerWithCardsStyle: React.CSSProperties = {
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "flex-end",
+  height: "100%",
+  width: "100%",
+  gap: "2rem",
+};
+
+const cardLeftRightWrapper: React.CSSProperties = {
+  position: "absolute",
+  bottom: "-10px",
+  display: "flex",
+  justifyContent: "space-between",
+  width: "100%",
+  padding: "0 2rem",
+  zIndex: 3,
 };
 
 const Card: React.FC<CardProps> = ({ image, title, description }) => (
@@ -137,15 +147,29 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   return (
     <div style={wrapperStyle}>
       <div style={playerStyle}>
-        <ReactPlayer
-          url={url}
-          width={width}
-          height={height}
-          playing={playing}
-          controls={controls}
-          loop={loop}
-          muted={muted}
-        />
+        <div style={playerWithCardsStyle}>
+          <ReactPlayer
+            url={url}
+            width={width}
+            height={height}
+            playing={playing}
+            controls={controls}
+            loop={loop}
+            muted={muted}
+          />
+          <div style={cardLeftRightWrapper}>
+            <Card
+              image="img/svg/notes.svg"
+              title="​With Blockchain, there is no single point of failure."
+              description="All information written to a blockchain is permanent – it cannot be deleted or altered."
+            />
+            <Card
+              image="img/svg/notes.svg"
+              title="Permanent, Authorized and Verified"
+              description="Ensuring data integrity for your mission critical information by delivering security, traceability and trust."
+            />
+          </div>
+        </div>
       </div>
 
       {(overlayText1 || overlayText2 || overlayImage) && (
@@ -185,18 +209,17 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           )}
         </div>
       )}
-      {/* Blue gradient dot background */}
+
       <div
-        style={{
-          position: "absolute",
-          top: "100vh",
-          width: "100%",
-          height: "500px",
-          background: "radial-gradient(circle, rgba(0,123,255,0.4) 0%, transparent 70%)",
-          zIndex: 0,
-        }}
-      />
-     
+  style={{
+    position: "absolute",
+    top: "125vh",
+    width: "100%",
+    height: "500px",
+    background: "radial-gradient(ellipse at center, rgba(0,123,255,0.3) 0%, rgba(0,123,255,0.05) 60%, transparent 100%)",
+    zIndex: 0,
+  }}
+/>
     </div>
   );
 };

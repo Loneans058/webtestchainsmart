@@ -1,13 +1,31 @@
 {
-  "title": "Landing page template for developers & startups",
-  "text": "Beautifully designed templates using React.js, ant design and styled-components! Save weeks of time and build your landing page in minutes.",
-  "button": [
+  "title": "SmartShield Features Overview",
+  "content": "Explore the core features that make SmartShield a secure and powerful data protection platform.",
+  "section": [
     {
-      "title": "Explore"
+      "title": "Alerts",
+      "content": "Using the power of blockchain, SmartShield detects and generates alerts for unauthorized changes to documents, transactions, database records, audio files, video, or any digital content that needs to be protected from tampering.",
+      "icon": "img/svg/notes.svg"
     },
     {
-      "title": "Learn more",
-      "color": "#fff"
+      "title": "Powerful web-based user interface",
+      "content": "An executive dashboard for management overview, with tools for managing and tracking alerts, reporting, and activity logs.",
+      "icon": "img/svg/notes.svg"
+    },
+    {
+      "title": "Audit Trail",
+      "content": "Fully supported via the ChainSmart online help desk.",
+      "icon": "img/svg/notes.svg"
+    },
+    {
+      "title": "Independent Control",
+      "content": "Data owners can schedule the verification of data directly from SmartShield.",
+      "icon": "img/svg/notes.svg"
+    },
+    {
+      "title": "Customer Support",
+      "content": "Fully supported via the ChainSmart online help desk.",
+      "icon": "img/svg/notes.svg"
     }
   ]
 }

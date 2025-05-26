@@ -1,19 +1,16 @@
+// Keep imports as-is
 import { Row, Col } from "antd";
 import { Fade } from "react-awesome-reveal";
 import { withTranslation } from "react-i18next";
-
+import { Parallax } from "react-scroll-parallax";
 import { ContentBlockProps } from "./types";
 import { Button } from "../../common/Button";
 import { SvgIcon } from "../../common/SvgIcon";
 import {
   ContentSection,
-  Content,
-  ContentWrapper,
-  ServiceWrapper,
   MinTitle,
   MinPara,
   StyledRow,
-  ButtonWrapper,
 } from "./styles";
 
 const ContentBlock = ({
@@ -28,85 +25,87 @@ const ContentBlock = ({
 }: ContentBlockProps) => {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
+    element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <ContentSection>
-      <Fade direction={direction} triggerOnce>
-        <StyledRow
-          justify="space-between"
-          align="middle"
-          id={id}
-          direction={direction}
-        >
-          <Col lg={11} md={11} sm={12} xs={24}>
-            <SvgIcon src={icon} width="100%" height="100%" />
+  <>
+   <Parallax translateY={["0px", "200px"]}>
+    <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+      <h1 style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
+        {t(title)}
+      </h1>
+    </div>
+  </Parallax>
+  <ContentSection style={{ marginTop: "18.75rem" }}>
+  <Fade direction={direction} triggerOnce>
+    <StyledRow justify="center" align="top" id={id} direction={direction}>
+      <Col span={24}>
+        <Row justify="center" gutter={[24, 64]} align="top">
+          {/* Left column - 2 items */}
+          <Col xs={24} md={6}>
+            <Row gutter={[0, 48]}>
+              {section?.slice(0, 2).map((item, index) => (
+                <Col key={index} span={24}>
+                  <img src={item.icon} width="60" height="60" />
+                  <MinTitle>{t(item.title)}</MinTitle>
+                  <MinPara>{t(item.content)}</MinPara>
+                </Col>
+              ))}
+            </Row>
           </Col>
-          <Col lg={11} md={11} sm={11} xs={24}>
-            <ContentWrapper>
-              <h6>{t(title)}</h6>
-              <Content>{t(content)}</Content>
-              {direction === "right" ? (
-                <ButtonWrapper>
-                  {typeof button === "object" &&
-                    button.map(
-                      (
-                        item: {
-                          color?: string;
-                          title: string;
-                        },
-                        id: number
-                      ) => {
-                        return (
-                          <Button
-                            key={id}
-                            color={item.color}
-                            onClick={() => scrollTo("about")}
-                          >
-                            {t(item.title)}
-                          </Button>
-                        );
-                      }
-                    )}
-                </ButtonWrapper>
-              ) : (
-                <ServiceWrapper>
-                  <Row justify="space-between">
-                    {typeof section === "object" &&
-                      section.map(
-                        (
-                          item: {
-                            title: string;
-                            content: string;
-                            icon: string;
-                            video?: string;
-                          },
-                          id: number
-                        ) => {
-                          return (
-                            <Col key={id} span={11}>
-                              <SvgIcon
-                                src={item.icon}
-                                width="60px"
-                                height="60px"
-                              />
-                              <MinTitle>{t(item.title)}</MinTitle>
-                              <MinPara>{t(item.content)}</MinPara>
-                            </Col>
-                          );
-                        }
-                      )}
-                  </Row>
-                </ServiceWrapper>
-              )}
-            </ContentWrapper>
+
+          {/* Center image */}
+          <Col xs={24} md={8} style={{ textAlign: "center" }}>
+            <Parallax easing="easeOutQuad" translateY={["0px", "220px"]}>
+              <img src={"img/svg/Dashboard.png"} width="300" height="200" />
+            </Parallax>
+             <div
+    style={{
+      position: "absolute",
+      bottom: "-400px",
+      transform: "translateX(-50%)",
+      width: "400px",
+      left: "50%",
+      height: "400px",
+      backgroundImage: "url('/img/svg/mac.png')",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain",
+      backgroundPosition: "center",
+      zIndex: -1,
+    }}
+  />
           </Col>
-        </StyledRow>
-      </Fade>
-    </ContentSection>
+
+          {/* Right column - 2 items */}
+          <Col xs={24} md={6}>
+            <Row gutter={[0, 48]}>
+              {section?.slice(2, 4).map((item, index) => (
+                <Col key={index} span={24}>
+                  <img src={item.icon} width="60" height="60" />
+                  <MinTitle>{t(item.title)}</MinTitle>
+                  <MinPara>{t(item.content)}</MinPara>
+                </Col>
+              ))}
+            </Row>
+          </Col>
+        </Row>
+
+        {/* Centered below item (5th item) */}
+        {section?.[4] && (
+          <Row justify="center" style={{ marginTop: "64px" }}>
+            <Col xs={24} md={12} style={{ textAlign: "center" }}>
+              <img src={section[4].icon} width="60" height="60" />
+              <MinTitle>{t(section[4].title)}</MinTitle>
+              <MinPara>{t(section[4].content)}</MinPara>
+            </Col>
+          </Row>
+        )}
+      </Col>
+    </StyledRow>
+  </Fade>
+</ContentSection>
+</>
   );
 };
 
