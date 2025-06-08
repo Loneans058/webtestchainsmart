@@ -1,167 +1,133 @@
+import React from "react";
+import styled from "styled-components";
 import { Row, Col } from "antd";
-import { withTranslation, TFunction } from "react-i18next";
-import { SvgIcon } from "../../common/SvgIcon";
-import Container from "../../common/Container";
 
-import i18n from "i18next";
-import {
-  FooterSection,
-  Title,
-  NavLink,
-  Extra,
-  LogoContainer,
-  Para,
-  Large,
-  Chat,
-  Empty,
-  FooterContainer,
-  Language,
-  Label,
-  LanguageSwitch,
-  LanguageSwitchContainer,
-} from "./styles";
+const FooterWrapper = styled.footer`
+  background-color: #3366e0;
+  padding: 4rem 1rem 1rem;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  color: #000;
+`;
 
-interface SocialLinkProps {
-  href: string;
-  src: string;
-}
+const FooterContent = styled.div`
+  background-color: white;
+  border-radius: 2.5rem;
+  padding: 4rem 2rem 2rem;
+  max-width: 1430px;
+  margin: 0 auto;
+`;
 
-const Footer = ({ t }: { t: TFunction }) => {
-  const handleChange = (language: string) => {
-    i18n.changeLanguage(language);
-  };
+const Logo = styled.img`
+  max-width: 160px;
+  margin-bottom: 3rem;
+`;
 
-  const SocialLink = ({ href, src }: SocialLinkProps) => {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        key={src}
-        aria-label={src}
-      >
-        <SvgIcon src={src} width="25px" height="25px" />
-      </a>
-    );
-  };
+const SectionTitle = styled.h4`
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+`;
 
+const Text = styled.div`
+  font-size: 0.95rem;
+  line-height: 1.6;
+`;
+
+const Email = styled.a`
+  font-size: 0.95rem;
+  color: #000;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 1.5rem;
+`;
+
+const SocialLink = styled.a`
+  display: block;
+  font-size: 0.95rem;
+  color: #000;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+`;
+
+const ContactButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  span {
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+  }
+`;
+
+const PartnerLogo = styled.img`
+  max-width: 230px;
+  margin-top: 1.2rem;
+`;
+
+const BottomText = styled.div`
+  text-align: right;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #000;
+`;
+
+const Footer = () => {
   return (
-    <>
-      <FooterSection>
-        <Container>
-          <Row justify="space-between">
-            <Col lg={10} md={10} sm={12} xs={12}>
-              <Language>{t("Contact")}</Language>
-              <Large to="/">{t("Tell us everything")}</Large>
-              <Para>
-                {t(`Do you have any question? Feel free to reach out.`)}
-              </Para>
-              <a href="mailto:l.qqbadze@gmail.com">
-                <Chat>{t(`Let's Chat`)}</Chat>
-              </a>
-            </Col>
-            <Col lg={8} md={8} sm={12} xs={12}>
-              <Title>{t("Policy")}</Title>
-              <Large to="/">{t("Application Security")}</Large>
-              <Large to="/">{t("Software Principles")}</Large>
-            </Col>
-            <Col lg={6} md={6} sm={12} xs={12}>
-              <Empty />
-              <Large to="/">{t("Support Center")}</Large>
-              <Large to="/">{t("Customer Support")}</Large>
-            </Col>
-          </Row>
-          <Row justify="space-between">
-            <Col lg={10} md={10} sm={12} xs={12}>
-              <Empty />
-              <Language>{t("Address")}</Language>
-              <Para>Rancho Santa Margarita</Para>
-              <Para>2131 Elk Street</Para>
-              <Para>California</Para>
-            </Col>
-            <Col lg={8} md={8} sm={12} xs={12}>
-              <Title>{t("Company")}</Title>
-              <Large to="/">{t("About")}</Large>
-              <Large to="/">{t("Blog")}</Large>
-              <Large to="/">{t("Press")}</Large>
-              <Large to="/">{t("Careers & Culture")}</Large>
-            </Col>
-            <Col lg={6} md={6} sm={12} xs={12}>
-              <Label htmlFor="select-lang">{t("Language")}</Label>
-              <LanguageSwitchContainer>
-                <LanguageSwitch onClick={() => handleChange("en")}>
-                  <SvgIcon
-                    src="united-states.svg"
-                    aria-label="homepage"
-                    width="30px"
-                    height="30px"
-                  />
-                </LanguageSwitch>
-                <LanguageSwitch onClick={() => handleChange("es")}>
-                  <SvgIcon
-                    src="spain.svg"
-                    aria-label="homepage"
-                    width="30px"
-                    height="30px"
-                  />
-                </LanguageSwitch>
-              </LanguageSwitchContainer>
-            </Col>
-          </Row>
-        </Container>
-      </FooterSection>
-      <Extra>
-        <Container border={true}>
-          <Row
-            justify="space-between"
-            align="middle"
-            style={{ paddingTop: "3rem" }}
-          >
-            <NavLink to="/">
-              <LogoContainer>
-                <SvgIcon
-                  src="logo.svg"
-                  aria-label="homepage"
-                  width="101px"
-                  height="64px"
-                />
-              </LogoContainer>
-            </NavLink>
-            <FooterContainer>
-              <SocialLink
-                href="https://github.com/Adrinlol/create-react-app-adrinlol"
-                src="github.svg"
-              />
-              <SocialLink
-                href="https://twitter.com/Adrinlolx"
-                src="twitter.svg"
-              />
-              <SocialLink
-                href="https://www.linkedin.com/in/lasha-kakabadze/"
-                src="linkedin.svg"
-              />
-              <SocialLink
-                href="https://medium.com/@lashakakabadze/"
-                src="medium.svg"
-              />
-              <a
-                href="https://ko-fi.com/Y8Y7H8BNJ"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  height="36"
-                  style={{ border: 0, height: 36 }}
-                  src="https://storage.ko-fi.com/cdn/kofi3.png?v=3"
-                  alt="Buy Me a Coffee at ko-fi.com"
-                />
-              </a>
-            </FooterContainer>
-          </Row>
-        </Container>
-      </Extra>
-    </>
+    <FooterWrapper>
+      <FooterContent>
+        <Row gutter={[32, 32]}>
+          <Col xs={24} md={6}>
+            <Logo src="img/svg/logos.png" alt="ChainSmart Logo" />
+            <Text>We're Partner with</Text>
+            <PartnerLogo src="img/svg/huawei.png" alt="Huawei Cloud Partner" />
+          </Col>
+
+          <Col xs={24} md={6}>
+            <SectionTitle>LOCATION</SectionTitle>
+            <Text>Gedung Griya Intan</Text>
+            <Text>Warung Jati Barat / No. 21B</Text>
+            <Text>Jakarta 12510</Text>
+            <Email href="mailto:hello@chainsmart.id">hello@chainsmart.id</Email>
+          </Col>
+
+          <Col xs={24} md={6}>
+            <SectionTitle>SOCIAL</SectionTitle>
+            <SocialLink href="#">Linkedin</SocialLink>
+            <SocialLink href="#">X (Twitter)</SocialLink>
+            <SocialLink href="#">Youtube</SocialLink>
+          </Col>
+
+          <Col xs={24} md={6}>
+            <SectionTitle>STAY CONNECTED</SectionTitle>
+            <Text>Get the latest news & updates</Text>
+            <div style={{ marginTop: "1rem" }}>
+              <ContactButton href="#">
+                Contact Us <span>→</span>
+              </ContactButton>
+            </div>
+          </Col>
+        </Row>
+
+        <BottomText>
+          © 2025. PT. Rantai Data Pintar - ChainSmart
+        </BottomText>
+      </FooterContent>
+    </FooterWrapper>
   );
 };
 
-export default withTranslation()(Footer);
+export default Footer;

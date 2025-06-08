@@ -23,7 +23,7 @@ const Home = () => {
         overlayText1="Protecting Your Data Through 
 Decentralization"
         overlayText2="ChainSmart Platform"
-        overlayImage="img/svg/developer.svg"
+        overlayImage="img/svg/logos.png"
       />
       <ParallaxProvider>
         <ContentBlock
@@ -35,11 +35,11 @@ Decentralization"
         id="intro"
       />
       </ParallaxProvider>
-      <MiddleBlock
+      {/* <MiddleBlock
         title={MiddleBlockContent.title}
         content={MiddleBlockContent.text}
         button={MiddleBlockContent.button}
-      />
+      /> */}
       <Contact
         // title={ContactContent.title}
         // content={ContactContent.text}

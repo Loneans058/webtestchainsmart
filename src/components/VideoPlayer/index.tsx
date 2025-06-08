@@ -60,8 +60,8 @@ const overlayText2Style: React.CSSProperties = {
 };
 
 const overlayImageStyle: React.CSSProperties = {
-  marginTop: '6rem',
-  width: '160px',
+  marginTop: '15rem',
+  width: '300px',
   height: 'auto',
 };
 
@@ -215,7 +215,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     position: "absolute",
     top: "125vh",
     width: "100%",
-    height: "500px",
+    height: "900px",
     background: "radial-gradient(ellipse at center, rgba(0,123,255,0.3) 0%, rgba(0,123,255,0.05) 60%, transparent 100%)",
     zIndex: 0,
   }}
