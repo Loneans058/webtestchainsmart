@@ -54,13 +54,10 @@ export const NewsContainer = styled.div`
 `;
 
 export const NewsCard = styled.div`
-  background: #fff;
   border-radius: 8px;
   padding: 40px;
   width: 100%;
-  color: #1a1a1a;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  border: 1px solid #eee;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -68,7 +65,6 @@ export const NewsCard = styled.div`
 
 export const NewsDate = styled.div`
   font-size: 14px;
-  color: #666;
   margin-bottom: 16px;
   font-weight: 500;
 `;
@@ -78,21 +74,17 @@ export const NewsTitle = styled.h2`
   font-weight: 700;
   margin-bottom: 24px;
   line-height: 1.3;
-  color: #1a1a1a;
 `;
 
 export const NewsContent = styled.p`
   font-size: 16px;
   line-height: 1.7;
   margin-bottom: 24px;
-  color: #444;
   flex-grow: 1;
 `;
 
 export const NewsIndicator = styled.div`
   font-size: 14px;
-  color: #888;
   font-weight: 500;
   padding-top: 24px;
-  border-top: 1px solid #eee;
 `;

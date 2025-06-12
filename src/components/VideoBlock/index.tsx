@@ -18,28 +18,28 @@ const news = [
     title: "ChainSmart Launches SmartShield v1.1 with New Data Viewer Feature",
     content:
       "ChainSmart launched the SmartShield Data Integrity System with version 1.1 and added the feature of DataViewer.",
-    image: "/smartshield-bg.jpg",
+    image: "/img/svg/2.jpg",
   },
   {
     date: "10 Jun 2025",
-    title: "SmartShield delivers data integrity through decentralization",
+    title: "SmartShield Data Integrity System Launch v1.0",
     content:
-      "SmartShield developed by ChainSmart is a blockchain-based data integrity service that serves as a secure digital vault for critical information.",
-    image: "/blockchain-bg.jpg",
+      "ChainSmart launches the SmartShield Data Integrity System representing the culmination of over two years of enhancements to ChainSmart’s original blockchain based data integrity engine",
+    image: "/img/svg/image2.jpg",
   },
   {
     date: "05 Jun 2025",
-    title: "ChainSmart partners with major tech firms",
+    title: "Discussion : SmartShield delivers data integrity through decentralization",
     content:
-      "New partnerships announced to expand blockchain adoption in enterprise solutions.",
-    image: "/partnership-bg.jpg",
+      "SmartShield, developed by ChainSmart, is a blockchain-based data integrity service that serves as a secure digital vault for critical information",
+    image: "/img/svg/image3.jpg",
   },
   {
     date: "01 Jun 2025",
-    title: "SmartShield security audit completed",
+    title: "SmartShield Data Integrity System",
     content:
-      "Independent security audit confirms SmartShield's robust protection mechanisms.",
-    image: "/security-bg.jpg",
+      "Think of SmartShield as a digital vault in which you can safely lock away a copy of your most valuable information. It delivers protection for your data through the power of decentalization.",
+    image: "/img/svg/image1.jpg",
   },
 ];
 

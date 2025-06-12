@@ -170,13 +170,18 @@ const MiddleBlock = ({ title, content, t }: MiddleBlockProps) => {
     return () => window.removeEventListener("wheel", handleScroll);
   }, [activeIndex]);
 
+  const getCardColor = (index: number) => {
+    const colors = ['#1a365d', '#2d3748', '#1a1a1a']; // Dark blue, dark grey, black
+    return colors[index % colors.length];
+  };
+
   return (
     <MiddleBlockSection>
       <StickyWrapper ref={ref}>
         <ContentWrapper>
-          <Row justify="space-between" align="middle" gutter={[48, 32]}>
+          <Row justify="space-between" align="top" gutter={[48, 32]}>
             <Col xl={10} lg={10} md={24} sm={24} xs={24}>
-              <LeftContent>
+              <LeftContent style={{ paddingTop: '40px' }}>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={controls}
@@ -190,11 +195,15 @@ const MiddleBlock = ({ title, content, t }: MiddleBlockProps) => {
                     },
                   }}
                 >
-                  <SectionTitle>
+                  <SectionTitle style={{ textAlign: 'left' }}>
                     All the news from <br />
                     ChainSmart
                   </SectionTitle>
-                  <SectionSubtitle>
+                  <SectionSubtitle style={{ 
+                    textAlign: 'left',  // Left-aligned subtitle
+                    marginTop: '16px',  // Reduced space between title and subtitle
+                    maxWidth: '90%'     // Prevent subtitle from stretching too far
+                  }}>
                     Stay updated with our latest announcements, launches,
                     <br />
                     developments and innovations.
@@ -214,11 +223,19 @@ const MiddleBlock = ({ title, content, t }: MiddleBlockProps) => {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.4, ease: "easeInOut" }}
                     >
-                      <NewsCard>
-                        <NewsDate>{news[activeIndex].date}</NewsDate>
-                        <NewsTitle>{news[activeIndex].title}</NewsTitle>
-                        <NewsContent>{news[activeIndex].content}</NewsContent>
-                        <NewsIndicator>
+                      <NewsCard style={{ 
+                        backgroundColor: getCardColor(activeIndex),
+                        color: '#ffffff',
+                        width: '600px',
+                        height: '500px',
+                      }}>
+                        <NewsDate style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{news[activeIndex].date}</NewsDate>
+                        <NewsTitle style={{ color: '#ffffff' }}>{news[activeIndex].title}</NewsTitle>
+                        <NewsContent style={{ color: 'rgba(255, 255, 255, 0.9)' }}>{news[activeIndex].content}</NewsContent>
+                        <NewsIndicator style={{ 
+                          color: 'rgba(255, 255, 255, 0.7)',
+                          borderTop: '1px solid rgba(255, 255, 255, 0.2)'
+                        }}>
                           {activeIndex + 1} / {news.length}
                         </NewsIndicator>
                       </NewsCard>

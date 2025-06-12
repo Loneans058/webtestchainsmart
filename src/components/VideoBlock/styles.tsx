@@ -1,14 +1,27 @@
 import styled from "styled-components";
 
 export const VideoBlockSection = styled.section`
-background: radial-gradient(
-    ellipse at center,
-    #eaefff 0%,
-    #ffffff 100%
-  );
+background: 
+    /* White corners (top-left, top-right, bottom-left, bottom-right) */
+    linear-gradient(to bottom right, transparent 49.5%, white 50%),
+    linear-gradient(to bottom left, transparent 49.5%, white 50%),
+    linear-gradient(to top right, transparent 49.5%, white 50%),
+    linear-gradient(to top left, transparent 49.5%, white 50%),
+    /* Central color gradient */
+    linear-gradient(rgb(190, 201, 240), rgb(190, 201, 240));
+
+  background-repeat: no-repeat;
+  background-size: 50% 50%;  /* Each gradient covers a quarter */
+  background-position:
+    top left,     /* Position each gradient in a corner */
+    top right,
+    bottom left,
+    bottom right;
+  
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
+  width: 100%;
 `;
 
 export const GridContainer = styled.div`
@@ -56,12 +69,14 @@ export const NewsContent = styled.div`
 export const NewsTitle = styled.h3`
   font-size: 1.3rem;
   font-weight: 700;
+  color: white;
   margin-bottom: 0.5rem;
 `;
 
 export const NewsText = styled.p`
   font-size: 1rem;
   font-weight: 400;
+  color: white;
   line-height: 1.4;
 `;
 
