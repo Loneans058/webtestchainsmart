@@ -13,6 +13,7 @@ const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
 const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
+const VideoBlock = lazy(() => import("../../components/VideoBlock"));
 
 const Home = () => {
   return (
@@ -35,15 +36,19 @@ Decentralization"
         id="intro"
       />
       </ParallaxProvider>
-      {/* <MiddleBlock
-        title={MiddleBlockContent.title}
-        content={MiddleBlockContent.text}
-        button={MiddleBlockContent.button}
-      /> */}
       <Contact
         // title={ContactContent.title}
         // content={ContactContent.text}
         // id="contact"
+      />
+          <MiddleBlock
+        title={MiddleBlockContent.title}
+        content={MiddleBlockContent.text}
+        button={MiddleBlockContent.button}
+      />
+      <VideoBlock
+        title={MiddleBlockContent.title}
+        content={MiddleBlockContent.text}
       />
     </Container>
   );

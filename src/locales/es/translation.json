@@ -24,5 +24,8 @@
   "Name" : "Nombre",
   "Your Name": "Tu nombre",
   "Email" : "Email",
-  "Your Email": "Tu correo electrónico"
+  "Your Email": "Tu correo electrónico",
+  "leftCornerText": "Some left intro text",
+  "rightCornerText": "Some right intro text",
+  "highlightWord": "Blockchain Technology"
 }

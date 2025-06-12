@@ -1,40 +1,235 @@
+import { useState, useEffect, useRef } from "react";
 import { Row, Col } from "antd";
 import { withTranslation, TFunction } from "react-i18next";
-import { Slide } from "react-awesome-reveal";
-import { Button } from "../../common/Button";
-import { MiddleBlockSection, Content, ContentWrapper } from "./styles";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { 
+  MiddleBlockSection,
+  StickyWrapper,
+  NewsContainer,
+  NewsDate,
+  NewsTitle,
+  NewsContent,
+  NewsIndicator,
+  ContentWrapper,
+  LeftContent,
+  RightContent,
+  NewsCard,
+  SectionTitle,
+  SectionSubtitle
+} from "./styles";
 
 interface MiddleBlockProps {
   title: string;
   content: string;
-  button: string;
+  button?: string;
   t: TFunction;
 }
 
-const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+const news = [
+  {
+    date: "17 Nov 2019",
+    title: "Proof of Concept for Supply Chain, Automation and Finance",
+    content:
+      "Indonesia is an Enabling Environment for Digital Commerce. Recent joint market research by Google, Temask and Bain & Company indicates extraordinary growth for the digital economy in Indonesia between now and 2025. The digital economy has quadrupled in Indonesia from $10 billion in 2015 to $40 billion in 2019 and is expected to be greater than $130 billion by 2025...",
+  },
+  {
+    date: "10 Jan 2020",
+    title: "Smart Contract Integration Success",
+    content:
+      "A successful trial of blockchain-based contracts for logistics partners completed with key partners...",
+  },
+  {
+    date: "20 Mar 2021",
+    title: "Digital Identity Pilot",
+    content:
+      "Pilot project launched to validate digital IDs for rural supply chain actors...",
+  },
+  {
+    date: "15 May 2021",
+    title: "Partnership with Major Retail Chain",
+    content:
+      "Announced strategic partnership with Indonesia's largest retail chain to implement blockchain tracking...",
+  },
+  {
+    date: "30 Jul 2021",
+    title: "Series A Funding Round Closed",
+    content:
+      "Successfully closed $25M Series A funding round led by Sequoia Capital Southeast Asia...",
+  },
+  {
+    date: "12 Sep 2021",
+    title: "Expansion to Vietnam Market",
+    content:
+      "Launched operations in Vietnam with local partnerships in agriculture supply chain...",
+  },
+  {
+    date: "05 Nov 2021",
+    title: "Blockchain Certification Achieved",
+    content:
+      "Received ISO/TC 307 certification for blockchain implementation standards compliance...",
+  },
+  {
+    date: "18 Jan 2022",
+    title: "Mobile App Release",
+    content:
+      "Released mobile application for small farmers to access supply chain network...",
+  },
+  {
+    date: "22 Mar 2022",
+    title: "Government Collaboration",
+    content:
+      "Signed MoU with Ministry of Trade for nationwide digital trade platform...",
+  },
+  {
+    date: "14 Jun 2022",
+    title: "Sustainability Initiative",
+    content:
+      "Launched carbon footprint tracking feature for all supply chain participants...",
+  },
+  {
+    date: "29 Aug 2022",
+    title: "AI Integration Beta",
+    content:
+      "Beta release of AI-powered demand forecasting for supply chain optimization...",
+  },
+  {
+    date: "10 Oct 2022",
+    title: "User Milestone Reached",
+    content:
+      "Platform surpassed 50,000 active users across Southeast Asia region...",
+  },
+  {
+    date: "05 Dec 2022",
+    title: "International Expansion",
+    content:
+      "Announced plans to expand operations to Thailand and Philippines in Q1 2023...",
+  },
+  {
+    date: "20 Feb 2023",
+    title: "Technology Upgrade",
+    content:
+      "Completed migration to more scalable blockchain infrastructure with zero downtime...",
+  },
+  {
+    date: "08 Apr 2023",
+    title: "Enterprise Solution Launch",
+    content:
+      "Released enterprise version with advanced analytics and reporting features...",
+  },
+];
+
+const MiddleBlock = ({ title, content, t }: MiddleBlockProps) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollLock = useRef(false);
+  const lastScrollTime = useRef(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  useEffect(() => {
+    const handleScroll = (e: WheelEvent) => {
+      if (!containerRef.current) return;
+      
+      const isInsideNewsContainer = e.target instanceof Node && 
+                                 containerRef.current.contains(e.target);
+      
+      const now = Date.now();
+      if ((scrollLock.current || now - lastScrollTime.current < 800) && !isInsideNewsContainer) {
+        return;
+      }
+
+      const scrollDirection = Math.sign(e.deltaY);
+      if (scrollDirection === 0) return;
+
+      lastScrollTime.current = now;
+      scrollLock.current = true;
+
+      let newIndex = activeIndex + scrollDirection;
+      newIndex = Math.max(0, Math.min(newIndex, news.length - 1));
+
+      if (newIndex !== activeIndex) {
+        setActiveIndex(newIndex);
+        if (isInsideNewsContainer) {
+          e.preventDefault();
+        }
+      }
+
+      setTimeout(() => {
+        scrollLock.current = false;
+      }, 800);
+    };
+
+    window.addEventListener("wheel", handleScroll, { passive: false });
+    return () => window.removeEventListener("wheel", handleScroll);
+  }, [activeIndex]);
+
   return (
     <MiddleBlockSection>
-      <Slide direction="up" triggerOnce>
-        <Row justify="center" align="middle">
-          <ContentWrapper>
-            <Col lg={24} md={24} sm={24} xs={24}>
-              <h6>{t(title)}</h6>
-              <Content>{t(content)}</Content>
-              {button && (
-                <Button name="submit" onClick={() => scrollTo("mission")}>
-                  {t(button)}
-                </Button>
-              )}
+      <StickyWrapper ref={ref}>
+        <ContentWrapper>
+          <Row justify="space-between" align="middle" gutter={[48, 32]}>
+            <Col xl={10} lg={10} md={24} sm={24} xs={24}>
+              <LeftContent>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={controls}
+                  variants={{
+                    visible: { 
+                      opacity: 1, 
+                      transition: { 
+                        duration: 0.8,
+                        ease: "easeOut"
+                      } 
+                    },
+                  }}
+                >
+                  <SectionTitle>
+                    All the news from <br />
+                    ChainSmart
+                  </SectionTitle>
+                  <SectionSubtitle>
+                    Stay updated with our latest announcements, launches,
+                    <br />
+                    developments and innovations.
+                  </SectionSubtitle>
+                </motion.div>
+              </LeftContent>
             </Col>
-          </ContentWrapper>
-        </Row>
-      </Slide>
+
+            <Col xl={12} lg={12} md={24} sm={24} xs={24}>
+              <RightContent ref={containerRef}>
+                <NewsContainer>
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeIndex}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                    >
+                      <NewsCard>
+                        <NewsDate>{news[activeIndex].date}</NewsDate>
+                        <NewsTitle>{news[activeIndex].title}</NewsTitle>
+                        <NewsContent>{news[activeIndex].content}</NewsContent>
+                        <NewsIndicator>
+                          {activeIndex + 1} / {news.length}
+                        </NewsIndicator>
+                      </NewsCard>
+                    </motion.div>
+                  </AnimatePresence>
+                </NewsContainer>
+              </RightContent>
+            </Col>
+          </Row>
+        </ContentWrapper>
+      </StickyWrapper>
     </MiddleBlockSection>
   );
 };
