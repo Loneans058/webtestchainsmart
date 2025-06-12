@@ -1,5 +1,6 @@
 import { lazy } from "react";
 import IntroContent from "../../content/IntroContent.json";
+import VideoBlockContent from "../../content/VideoBlockContent.json";
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
 import { ParallaxProvider } from "react-scroll-parallax";
 
@@ -44,7 +45,7 @@ Decentralization"
         button={MiddleBlockContent.button}
       />
       <VideoBlock
-        title={MiddleBlockContent.title}
+        title={VideoBlockContent.title}
         content={MiddleBlockContent.text}
       />
       <ClientBlock

@@ -2,6 +2,7 @@ import { withTranslation, TFunction } from "react-i18next";
 import {
   VideoBlockSection,
   GridContainer,
+  HeroTitle
 } from "./styles";
 import NewsCardItem from "./NewsCardItem"; // 👈 Create this new component below
 
@@ -43,15 +44,22 @@ const news = [
   },
 ];
 
-const VideoBlock = ({ title, content, t }: VideoBlockProps) => {
+const VideoBlock = ({}: VideoBlockProps) => {
   return (
-    <VideoBlockSection>
-      <GridContainer>
+    <> 
+    <HeroTitle>
+        Discover the power of blockchain with SmartShield! Our ChainSmart technology enables seamless transactions and enhances security for your operations. 
+      </HeroTitle>
+      <VideoBlockSection>
+     
+      <GridContainer style={{ marginTop: "10rem" }}>
         {news.map((item, index) => (
           <NewsCardItem key={index} item={item} index={index} />
         ))}
       </GridContainer>
     </VideoBlockSection>
+      </>
+    
   );
 };
 

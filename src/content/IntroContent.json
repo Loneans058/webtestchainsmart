@@ -5,27 +5,27 @@
     {
       "title": "Alerts",
       "content": "Using the power of blockchain, SmartShield detects and generates alerts for unauthorized changes to documents, transactions, database records, audio files, video, or any digital content that needs to be protected from tampering.",
-      "icon": "img/svg/notes.svg"
+      "icon": "img/svg/iconmegaphone.png"
     },
     {
       "title": "Powerful web-based user interface",
       "content": "An executive dashboard for management overview, with tools for managing and tracking alerts, reporting, and activity logs.",
-      "icon": "img/svg/notes.svg"
+      "icon": "img/svg/iconmagnifier.png"
     },
     {
       "title": "Audit Trail",
       "content": "Fully supported via the ChainSmart online help desk.",
-      "icon": "img/svg/notes.svg"
+      "icon": "img/svg/iconsie.png"
     },
     {
       "title": "Independent Control",
       "content": "Data owners can schedule the verification of data directly from SmartShield.",
-      "icon": "img/svg/notes.svg"
+      "icon": "img/svg/icontask.png"
     },
     {
       "title": "Customer Support",
       "content": "Fully supported via the ChainSmart online help desk.",
-      "icon": "img/svg/notes.svg"
+      "icon": "img/svg/iconheadphone.png"
     }
   ]
 }

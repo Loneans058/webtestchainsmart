@@ -24,6 +24,18 @@ background:
   width: 100%;
 `;
 
+export const HeroTitle = styled.h1`
+  font-size: 2.5rem; // Large font size
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+  line-height: 1.3;
+  color: #333; // Adjust color as needed
+`;
+
 export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

@@ -79,7 +79,7 @@ const cardStyle: React.CSSProperties = {
   backdropFilter: "blur(20px)",
   borderRadius: "1rem",
   padding: "2rem",
-  width: "260px",
+  width: "360px",
   boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
   color: "#333",
   textAlign: "left",
@@ -93,13 +93,13 @@ const imageStyle: React.CSSProperties = {
 };
 
 const titleStyle: React.CSSProperties = {
-  fontSize: "0.9rem",
+  fontSize: "1.4rem",
   fontWeight: "bold",
   marginBottom: "0.5rem",
 };
 
 const descriptionStyle: React.CSSProperties = {
-  fontSize: "0.6rem",
+  fontSize: "1.0rem",
   lineHeight: 1.5,
   color: "#444",
 };
@@ -159,12 +159,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           />
           <div style={cardLeftRightWrapper}>
             <Card
-              image="img/svg/notes.svg"
+              image="img/svg/ssanimated.png"
               title="​With Blockchain, there is no single point of failure."
               description="All information written to a blockchain is permanent – it cannot be deleted or altered."
             />
             <Card
-              image="img/svg/notes.svg"
+              image="img/svg/ssanimatedlaptop.png"
               title="Permanent, Authorized and Verified"
               description="Ensuring data integrity for your mission critical information by delivering security, traceability and trust."
             />

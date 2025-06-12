@@ -61,7 +61,7 @@ const Header = ({ t }: { t: TFunction }) => {
                 menu={{
                   items: [
                     { key: "en", label: "🇺🇸 English" },
-                    { key: "es", label: "🇪🇸 Español" },
+                    { key: "es", label: "🇮🇩 Indonesia" },
                   ],
                   selectable: true,
                   selectedKeys: [i18n.language],
@@ -70,7 +70,7 @@ const Header = ({ t }: { t: TFunction }) => {
                 trigger={['click']}
               >
                 <HeaderButton>
-                  {i18n.language === "en" ? "🇺🇸 English" : "🇪🇸 Español"}
+                  {i18n.language === "en" ? "🇺🇸 English" : "🇮🇩 Indonesia"}
                 </HeaderButton>
               </Dropdown>
             </LanguageSwitch>
