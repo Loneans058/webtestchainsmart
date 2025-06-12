@@ -34,10 +34,10 @@ const news = [
       "Indonesia is an Enabling Environment for Digital Commerce. Recent joint market research by Google, Temask and Bain & Company indicates extraordinary growth for the digital economy in Indonesia between now and 2025. The digital economy has quadrupled in Indonesia from $10 billion in 2015 to $40 billion in 2019 and is expected to be greater than $130 billion by 2025...",
   },
   {
-    date: "10 Jan 2020",
-    title: "Smart Contract Integration Success",
+    date: "22 July 2021",
+    title: "Increasing Business Activity Benefitting from Blockchain Technology",
     content:
-      "A successful trial of blockchain-based contracts for logistics partners completed with key partners...",
+      "Indonesia is an Enabling Environment for Digital Commerce.Blockchain can provide enormous benefit to Indonesia. An opinion piece by Paul Brisk, Co-founder and Director of ChainSmart. The article describes third generation blockchain and how this innovation can provide benefit to Indonesia when it comes to financial inclusion through lowering the cost of participation.",
   },
   {
     date: "20 Mar 2021",
