@@ -18,6 +18,7 @@ import {
   SectionTitle,
   SectionSubtitle
 } from "./styles";
+import { link } from "fs";
 
 interface MiddleBlockProps {
   title: string;
@@ -36,11 +37,18 @@ const news = [
   {
     date: "22 July 2021",
     title: "Increasing Business Activity Benefitting from Blockchain Technology",
+    link: "https://chainsmart.id/downloads/Article%20for%20JP.pdf", // Example link
     content:
       "Indonesia is an Enabling Environment for Digital Commerce.Blockchain can provide enormous benefit to Indonesia. An opinion piece by Paul Brisk, Co-founder and Director of ChainSmart. The article describes third generation blockchain and how this innovation can provide benefit to Indonesia when it comes to financial inclusion through lowering the cost of participation.",
   },
   {
-    date: "21 Dec 2021",
+    date: "01 Dec 2021",
+    title: "Proof of Concept for Supply Chain, Automation and Finance",
+    content:
+      "ChainSmart delivers Proof of Concept Blockchain Solution for Supply Chain Management, Automation and Finance.",
+  },
+  {
+    date: "09 Dec 2021",
     title: "UNSRAT is the First University in Indonesia Implementing Blockchain Technology",
     content:
       "UNSRAT Uses ChainSmart Becomes the First University in Indonesia to use Blockchain.",
@@ -48,18 +56,28 @@ const news = [
   {
     date: "17 May 2022",
     title: "Blockchain Training from ChainSmart",
+    link: "https://chainsmart.id/downloads/Bro_Training-eng.pdf", // Example link
     content:
       "Press Release: UNSRAT cooperates with ChainSmart to become the first tertiary institution in Indonesia which implements the blockchain to ensure the integrity of the Academic Record.",
   },
   {
+    date: "25 May 2022",
+    title: "Press Release: UNSRAT Ensuring Academic Data Integrity with Blockchain Technology",
+    link: "https://chainsmart.id/downloads/PressRelease-Eng.pdf", // Example link
+    content:
+      "Press Release: UNSRAT cooperates with ChainSmart to become the first tertiary institution in Indonesia which implements the blockchain to ensure the integrity of the Academic Record. Download the Press Release.",
+  },
+  {
     date: "14 Jun 2022",
     title: "Blockchain Webinar Event for University with ChainSmart, Metrocom and Huawei Cloud Services",
+    link: "https://chainsmart.id/downloads/EventFlyer-2022.07.19.pdf", // Example link
     content:
       "ChainSmart presenting Blockchain solution for universities in Indonesia in a webinar co-hosted by Metrocom and Huawei Cloud Services on July 19, 2022.",
   },
   {
     date: "8 Feb, 2023",
     title: "Presenting Blockchain-Based Platform Kredensialku for Academic Result Verification",
+    link: "https://chainsmart.id/downloads/Press_Release_Kredensialku_eng.pdf", // Example link
     content:
       "PT Rantai Data Pintar (ChainSmart) today announced the launch in Indonesia of a blockchain based service called KredensialKu. The service uses blockchain technology to securely store verifiable proof of academic documents such as ijazah and transcripts issued by universities to graduates. Kredensialku allows graduates to prove to external parties such as potential employers, that their academic documents are genuine and have not been altered or faked.",
   },
@@ -80,18 +98,21 @@ const news = [
     title: "ChainSmart Launches SmartShield v1.0",
     content:
       "Today, ChainSmart is thrilled to announce the launch of version 1.0 of our SmartShield Data Integrity System. This product represents the culmination of over two years of enhancements to ChainSmart’s original blockchain based data integrity engine. Please refer to the launch video below, with additional information provided in the video of the launch event interview with Q&A. You may also download the Press Release",
+    link: "https://chainsmart.id/downloads/SmartShieldPressRelease[English].pdf" // Example link
   },
   {
     date: "19 July 2024",
     title: "ChainSmart Launches SmartShield v1.1 with New Data Viewer Feature",
     content:
       " Today, ChainSmart is thrilled to announce the launch of version 1.1 of our SmartShield Data Integrity System which introduces the Data Viewer feature. This significant enhancement allows an organization using SmartShield to extend data integrity to the information issued to their business partners, customers, and subsidiaries. Please refer to the launch video below, with additional information provided in the video of the launch event interview with Q&A.You may also download the Press Release",
+    link: "https://chainsmart.id/downloads/SmartShield_v1.1_Press_Release_v3_19July24.pdf" // Example link
   },
   {
     date: "2 Aug 2024",
     title: "ChainSmart Launches SmartShield v2.0 with New Web Verification",
     content:
       "Today, ChainSmart is excited to announce the launch of version 2.0 of our SmartShield Data Integrity System which introduces the Web Verification API feature. When an organization uses SmartShield to ensure the integrity of digital information, and then issues that information to an external audience, the new Web Verification API allows the organization to establish a website where external parties can upload the digital content to be verified by SmartShield. Published content can be confirmed by the external audience as genuine, from the trusted issuer, and has not suffered unauthorized changes. Please refer to the launch video below, with additional information provided in the video of the launch event interview with Q&A. You may also download the Press Release",
+    link: "https://chainsmart.id/downloads/SmartShield_v2.0(english).pdf" // Example link
   },
   {
     date: "15 Oct 2024",
@@ -213,7 +234,26 @@ const MiddleBlock = ({ title, content, t }: MiddleBlockProps) => {
                       }}>
                         <NewsDate style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{news[activeIndex].date}</NewsDate>
                         <NewsTitle style={{ color: '#ffffff' }}>{news[activeIndex].title}</NewsTitle>
-                        <NewsContent style={{ color: 'rgba(255, 255, 255, 0.9)' }}>{news[activeIndex].content}</NewsContent>
+                        {news[activeIndex].link ? (
+                          <a 
+                            href={news[activeIndex].link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            style={{ 
+                              color: 'inherit', 
+                              textDecoration: 'none', 
+                              cursor: 'pointer' 
+                            }}
+                          >
+                            <NewsContent style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+                              {news[activeIndex].content}
+                            </NewsContent>
+                          </a>
+                        ) : (
+                          <NewsContent style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+                            {news[activeIndex].content}
+                          </NewsContent>
+                        )}
                         <NewsIndicator style={{ 
                           color: 'rgba(255, 255, 255, 0.7)',
                           borderTop: '1px solid rgba(255, 255, 255, 0.2)'
