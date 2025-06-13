@@ -82,12 +82,6 @@ const news = [
       "Today, ChainSmart is thrilled to announce the launch of version 1.0 of our SmartShield Data Integrity System. This product represents the culmination of over two years of enhancements to ChainSmart’s original blockchain based data integrity engine. Please refer to the launch video below, with additional information provided in the video of the launch event interview with Q&A. You may also download the Press Release",
   },
   {
-    date: "14 Jun 2022",
-    title: "Blockchain Webinar Event for University with ChainSmart, Metrocom and Huawei Cloud Services",
-    content:
-      "ChainSmart presenting Blockchain solution for universities in Indonesia in a webinar co-hosted by Metrocom and Huawei Cloud Services on July 19, 2022.",
-  },
-  {
     date: "19 July 2024",
     title: "ChainSmart Launches SmartShield v1.1 with New Data Viewer Feature",
     content:
