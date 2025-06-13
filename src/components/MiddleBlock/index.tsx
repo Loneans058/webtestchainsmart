@@ -83,9 +83,9 @@ const news = [
   },
   {
     date: "14 Jun 2022",
-    title: "Sustainability Initiative",
+    title: "Blockchain Webinar Event for University with ChainSmart, Metrocom and Huawei Cloud Services",
     content:
-      "Launched carbon footprint tracking feature for all supply chain participants...",
+      "ChainSmart presenting Blockchain solution for universities in Indonesia in a webinar co-hosted by Metrocom and Huawei Cloud Services on July 19, 2022.",
   },
   {
     date: "19 July 2024",
