@@ -77,7 +77,7 @@ const Header = ({ t }: { t: TFunction }) => {
           </LanguageSwitchContainer>
         </Col>
         <Col>
-          <CustomNavLinkSmall onClick={() => scrollTo("product")}>
+          <CustomNavLinkSmall onClick={() => scrollTo("intro")}>
         <Span>{t("Product")}</Span>
           </CustomNavLinkSmall>
         </Col>
