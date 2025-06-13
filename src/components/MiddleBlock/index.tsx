@@ -40,46 +40,46 @@ const news = [
       "Indonesia is an Enabling Environment for Digital Commerce.Blockchain can provide enormous benefit to Indonesia. An opinion piece by Paul Brisk, Co-founder and Director of ChainSmart. The article describes third generation blockchain and how this innovation can provide benefit to Indonesia when it comes to financial inclusion through lowering the cost of participation.",
   },
   {
-    date: "20 Mar 2021",
-    title: "Digital Identity Pilot",
+    date: "21 Dec 2021",
+    title: "UNSRAT is the First University in Indonesia Implementing Blockchain Technology",
     content:
-      "Pilot project launched to validate digital IDs for rural supply chain actors...",
+      "UNSRAT Uses ChainSmart Becomes the First University in Indonesia to use Blockchain.",
   },
   {
-    date: "15 May 2021",
-    title: "Partnership with Major Retail Chain",
+    date: "17 May 2022",
+    title: "Blockchain Training from ChainSmart",
     content:
-      "Announced strategic partnership with Indonesia's largest retail chain to implement blockchain tracking...",
+      "Press Release: UNSRAT cooperates with ChainSmart to become the first tertiary institution in Indonesia which implements the blockchain to ensure the integrity of the Academic Record.",
   },
   {
-    date: "30 Jul 2021",
-    title: "Series A Funding Round Closed",
+    date: "14 Jun 2022",
+    title: "Blockchain Webinar Event for University with ChainSmart, Metrocom and Huawei Cloud Services",
     content:
-      "Successfully closed $25M Series A funding round led by Sequoia Capital Southeast Asia...",
+      "ChainSmart presenting Blockchain solution for universities in Indonesia in a webinar co-hosted by Metrocom and Huawei Cloud Services on July 19, 2022.",
   },
   {
-    date: "12 Sep 2021",
-    title: "Expansion to Vietnam Market",
+    date: "8 Feb, 2023",
+    title: "Presenting Blockchain-Based Platform Kredensialku for Academic Result Verification",
     content:
-      "Launched operations in Vietnam with local partnerships in agriculture supply chain...",
+      "PT Rantai Data Pintar (ChainSmart) today announced the launch in Indonesia of a blockchain based service called KredensialKu. The service uses blockchain technology to securely store verifiable proof of academic documents such as ijazah and transcripts issued by universities to graduates. Kredensialku allows graduates to prove to external parties such as potential employers, that their academic documents are genuine and have not been altered or faked.",
   },
   {
-    date: "05 Nov 2021",
-    title: "Blockchain Certification Achieved",
+    date: "21 Feb 2023",
+    title: "Huawei Cloud Service Recognise ChainSmart as Their Technology Partner to Deliver Blockchain Solution",
     content:
-      "Received ISO/TC 307 certification for blockchain implementation standards compliance...",
+      "PT Rantai Data Pintar (ChainSmart) today announced that from today we are a recognised Technology Partner for Huawei Cloud Services. We build our blockchain services in the Huawei Cloud, and we are proud to work with Huawei Cloud to deliver our blockchain solutions to our customers.",
   },
   {
-    date: "18 Jan 2022",
-    title: "Mobile App Release",
+    date: "7 March 2023",
+    title: "ChainSmart is now Registered as a member of KADIN Indonesia",
     content:
-      "Released mobile application for small farmers to access supply chain network...",
+      "ChainSmart is now a registered member of the Indonesian Chamber of Commerce and Industry.(Kadin Indonesia).",
   },
   {
-    date: "22 Mar 2022",
-    title: "Government Collaboration",
+    date: "30 May 2024",
+    title: "ChainSmart Launches SmartShield v1.0",
     content:
-      "Signed MoU with Ministry of Trade for nationwide digital trade platform...",
+      "Today, ChainSmart is thrilled to announce the launch of version 1.0 of our SmartShield Data Integrity System. This product represents the culmination of over two years of enhancements to ChainSmart’s original blockchain based data integrity engine. Please refer to the launch video below, with additional information provided in the video of the launch event interview with Q&A. You may also download the Press Release",
   },
   {
     date: "14 Jun 2022",
@@ -88,35 +88,23 @@ const news = [
       "Launched carbon footprint tracking feature for all supply chain participants...",
   },
   {
-    date: "29 Aug 2022",
-    title: "AI Integration Beta",
+    date: "19 July 2024",
+    title: "ChainSmart Launches SmartShield v1.1 with New Data Viewer Feature",
     content:
-      "Beta release of AI-powered demand forecasting for supply chain optimization...",
+      " Today, ChainSmart is thrilled to announce the launch of version 1.1 of our SmartShield Data Integrity System which introduces the Data Viewer feature. This significant enhancement allows an organization using SmartShield to extend data integrity to the information issued to their business partners, customers, and subsidiaries. Please refer to the launch video below, with additional information provided in the video of the launch event interview with Q&A.You may also download the Press Release",
   },
   {
-    date: "10 Oct 2022",
-    title: "User Milestone Reached",
+    date: "2 Aug 2024",
+    title: "ChainSmart Launches SmartShield v2.0 with New Web Verification",
     content:
-      "Platform surpassed 50,000 active users across Southeast Asia region...",
+      "Today, ChainSmart is excited to announce the launch of version 2.0 of our SmartShield Data Integrity System which introduces the Web Verification API feature. When an organization uses SmartShield to ensure the integrity of digital information, and then issues that information to an external audience, the new Web Verification API allows the organization to establish a website where external parties can upload the digital content to be verified by SmartShield. Published content can be confirmed by the external audience as genuine, from the trusted issuer, and has not suffered unauthorized changes. Please refer to the launch video below, with additional information provided in the video of the launch event interview with Q&A. You may also download the Press Release",
   },
   {
-    date: "05 Dec 2022",
-    title: "International Expansion",
+    date: "15 Oct 2024",
+    title: "SmartShield: Your Secure Data Vault in the Cloud",
     content:
-      "Announced plans to expand operations to Thailand and Philippines in Q1 2023...",
-  },
-  {
-    date: "20 Feb 2023",
-    title: "Technology Upgrade",
-    content:
-      "Completed migration to more scalable blockchain infrastructure with zero downtime...",
-  },
-  {
-    date: "08 Apr 2023",
-    title: "Enterprise Solution Launch",
-    content:
-      "Released enterprise version with advanced analytics and reporting features...",
-  },
+      "ChainSmart has developed a blockchain-based data integrity service called SmartShield. Think of SmartShield as a secure digital vault for your mission-critical information.The Need for a Second Level of Defence While you may have implemented various protection systems and processes to safeguard your central datastore, experience shows that first-level defences will inevitably be breached. This begs the question: what is your second level of defence? How do you quickly recover from an attack?",
+  }
 ];
 
 const MiddleBlock = ({ title, content, t }: MiddleBlockProps) => {
