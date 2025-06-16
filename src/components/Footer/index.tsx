@@ -106,16 +106,15 @@ const Footer = () => {
 
           <Col xs={24} md={6}>
             <SectionTitle>SOCIAL</SectionTitle>
-            <SocialLink href="#">Linkedin</SocialLink>
-            <SocialLink href="#">X (Twitter)</SocialLink>
-            <SocialLink href="#">Youtube</SocialLink>
+            <SocialLink href="https://www.linkedin.com/company/chainsmart/posts/?feedView=all">Linkedin</SocialLink>
+            <SocialLink href="https://x.com/chainsmart_id">X (Twitter)</SocialLink>
+            <SocialLink href="https://www.youtube.com/@ChainSmartID">Youtube</SocialLink>
           </Col>
 
           <Col xs={24} md={6}>
             <SectionTitle>STAY CONNECTED</SectionTitle>
-            <Text>Get the latest news & updates</Text>
             <div style={{ marginTop: "1rem" }}>
-              <ContactButton href="#">
+              <ContactButton href="mailto:hello@chainsmart.id">
                 Contact Us <span>→</span>
               </ContactButton>
             </div>

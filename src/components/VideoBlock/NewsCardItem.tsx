@@ -6,7 +6,8 @@ import {
   NewsImage,
   NewsContent,
   NewsTitle,
-  NewsText
+  NewsText,
+  NewsURL, // Assuming you want to display the link URL as well
 } from "./styles";
 
 interface NewsCardItemProps {
@@ -14,6 +15,7 @@ interface NewsCardItemProps {
     image: string;
     title: string;
     content: string;
+    linkUrl?: string; // Optional link URL for the news item
   };
   index: number;
 }
@@ -43,6 +45,11 @@ const NewsCardItem = ({ item, index }: NewsCardItemProps) => {
         <NewsContent>
           <NewsTitle>{item.title}</NewsTitle>
           <NewsText>{item.content}</NewsText>
+          <NewsURL>{item.linkUrl && (
+            <a style={{color: "white" }} href={item.linkUrl} target="_blank" rel="noopener noreferrer">
+              View this video
+            </a>
+          )}</NewsURL>
         </NewsContent>
       </NewsCard>
     </motion.div>

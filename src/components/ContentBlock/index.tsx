@@ -4,16 +4,11 @@ import { Fade } from "react-awesome-reveal";
 import { withTranslation } from "react-i18next";
 import { Parallax } from "react-scroll-parallax";
 import { ContentBlockProps } from "./types";
-import { Button } from "../../common/Button";
-import { SvgIcon } from "../../common/SvgIcon";
 import { ContentSection, MinTitle, MinPara, StyledRow } from "./styles";
 
 const ContentBlock = ({
-  icon,
   title,
-  content,
   section,
-  button,
   t,
   id,
   direction,
@@ -25,19 +20,20 @@ const ContentBlock = ({
 
   return (
     <>
-     <div
-    style={{
-      fontSize: "clamp(4rem, 10vw, 15rem)",
-      fontWeight: "4000",
-      letterSpacing: "1rem",
-      textAlign: "center",
-      marginTop: "4rem",
-      marginBottom: "1rem",
-      textShadow: "2px 2px 0 #000, 4px 4px 0 #555",
-    }}
-  >
-    SmartShield
-  </div>
+      <div
+        id={id}
+        style={{
+          fontSize: "clamp(4rem, 10vw, 15rem)",
+          fontWeight: "4000",
+          letterSpacing: "1rem",
+          textAlign: "center",
+          marginTop: "4rem",
+          marginBottom: "1rem",
+          textShadow: "2px 2px 0 #000, 4px 4px 0 #555",
+        }}
+      >
+        SmartShield
+      </div>
       <div style={{ width: "100%", padding: "0 2rem", marginTop: "4rem" }}>
         <Row justify="space-between" align="middle">
           <Col xs={24} md={12}>
@@ -45,14 +41,22 @@ const ContentBlock = ({
               style={{ textAlign: "left", fontSize: "3rem", fontWeight: 500 }}
             >
               {t("leftCornerText")}{" "}
-              <span style={{ fontWeight: 700, color: "#1890ff" /* or any color */ }}>
-        {t("highlightWord")}
-      </span>
+              <span
+                style={{ fontWeight: 700, color: "#1890ff" /* or any color */ }}
+              >
+                {t("highlightWord")}
+              </span>
             </div>
           </Col>
           <Col xs={24} md={8}>
             <div
-              style={{ textAlign: "left", fontSize: "1.2rem", maxWidth: 700, fontWeight: 400, padding: "3.5rem 0" }}
+              style={{
+                textAlign: "left",
+                fontSize: "1.2rem",
+                maxWidth: 700,
+                fontWeight: 400,
+                padding: "3.5rem 0",
+              }}
             >
               {t("rightCornerText")}
             </div>
@@ -66,7 +70,7 @@ const ContentBlock = ({
       </Parallax>
       <ContentSection style={{ marginTop: "18.75rem" }}>
         <Fade direction={direction} triggerOnce>
-          <StyledRow justify="center" align="top" id={id} direction={direction}>
+          <StyledRow justify="center" align="top" direction={direction}>
             <Col span={24}>
               <Row justify="center" gutter={[24, 64]} align="top">
                 {/* Left column - 2 items */}

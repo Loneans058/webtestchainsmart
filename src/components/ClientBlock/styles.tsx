@@ -71,10 +71,8 @@ export const ImageWrapper = styled("img")`
   max-width: 80%; /* Ensure image fits within wrapper */
   max-height: 70px; /* Limit image height */
   object-fit: contain; /* Maintain aspect ratio */
-  filter: grayscale(100%); /* Grayscale filter for a uniform look */
-  opacity: 0.7; /* Slightly desaturated */
+  opacity: 1.0; /* Slightly desaturated */
   transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
-
   &:hover {
     filter: grayscale(0%); /* Full color on hover */
     opacity: 1; /* Full opacity on hover */

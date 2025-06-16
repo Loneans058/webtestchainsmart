@@ -92,3 +92,10 @@ export const NewsText = styled.p`
   line-height: 1.4;
 `;
 
+export const NewsURL = styled.p`
+  font-size: 1rem;
+  font-weight: 400;
+  color: red;
+  line-height: 1.4;
+`;
+

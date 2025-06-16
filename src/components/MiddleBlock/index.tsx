@@ -31,8 +31,9 @@ const news = [
   {
     date: "17 Nov 2019",
     title: "Proof of Concept for Supply Chain, Automation and Finance",
+    link: "https://www.thinkwithgoogle.com/intl/en-apac/tools-resources/research-studies/e-conomy-sea-2019-swipe-up-and-to-the-right-southeast-asias-100-billion-internet-economy/",
     content:
-      "Indonesia is an Enabling Environment for Digital Commerce. Recent joint market research by Google, Temask and Bain & Company indicates extraordinary growth for the digital economy in Indonesia between now and 2025. The digital economy has quadrupled in Indonesia from $10 billion in 2015 to $40 billion in 2019 and is expected to be greater than $130 billion by 2025...",
+      "Indonesia is an Enabling Environment for Digital Commerce. Recent joint market research by Google, Temask and Bain & Company indicates extraordinary growth for the digital economy in Indonesia between now and 2025. The digital economy has quadrupled in Indonesia from $10 billion in 2015 to $40 billion in 2019 and is expected to be greater than $130 billion by 2025. When put into context alongside the GDP of Indonesia at $1.022 trillion (2018) with annual growth of 5%, then the digital economy is becoming ever more significant.",
   },
   {
     date: "22 July 2021",
@@ -52,13 +53,6 @@ const news = [
     title: "UNSRAT is the First University in Indonesia Implementing Blockchain Technology",
     content:
       "UNSRAT Uses ChainSmart Becomes the First University in Indonesia to use Blockchain.",
-  },
-  {
-    date: "17 May 2022",
-    title: "Blockchain Training from ChainSmart",
-    link: "https://chainsmart.id/downloads/Bro_Training-eng.pdf", // Example link
-    content:
-      "Press Release: UNSRAT cooperates with ChainSmart to become the first tertiary institution in Indonesia which implements the blockchain to ensure the integrity of the Academic Record.",
   },
   {
     date: "25 May 2022",
@@ -86,12 +80,6 @@ const news = [
     title: "Huawei Cloud Service Recognise ChainSmart as Their Technology Partner to Deliver Blockchain Solution",
     content:
       "PT Rantai Data Pintar (ChainSmart) today announced that from today we are a recognised Technology Partner for Huawei Cloud Services. We build our blockchain services in the Huawei Cloud, and we are proud to work with Huawei Cloud to deliver our blockchain solutions to our customers.",
-  },
-  {
-    date: "7 March 2023",
-    title: "ChainSmart is now Registered as a member of KADIN Indonesia",
-    content:
-      "ChainSmart is now a registered member of the Indonesian Chamber of Commerce and Industry.(Kadin Indonesia).",
   },
   {
     date: "30 May 2024",
@@ -234,26 +222,28 @@ const MiddleBlock = ({ title, content, t }: MiddleBlockProps) => {
                       }}>
                         <NewsDate style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{news[activeIndex].date}</NewsDate>
                         <NewsTitle style={{ color: '#ffffff' }}>{news[activeIndex].title}</NewsTitle>
-                        {news[activeIndex].link ? (
-                          <a 
-                            href={news[activeIndex].link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            style={{ 
-                              color: 'inherit', 
-                              textDecoration: 'none', 
-                              cursor: 'pointer' 
+                        <NewsContent style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+                          {news[activeIndex].content}
+                          {news[activeIndex].link && (
+                          <>
+                            <br />
+                            <a
+                            href={news[activeIndex].link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              color: 'inherit',
+                              textDecoration: 'underline',
+                              cursor: 'pointer',
+                              marginTop: '8px',
+                              display: 'inline-block'
                             }}
-                          >
-                            <NewsContent style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-                              {news[activeIndex].content}
-                            </NewsContent>
-                          </a>
-                        ) : (
-                          <NewsContent style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-                            {news[activeIndex].content}
-                          </NewsContent>
-                        )}
+                            >
+                            Visit this URL
+                            </a>
+                          </>
+                          )}
+                        </NewsContent>
                         <NewsIndicator style={{ 
                           color: 'rgba(255, 255, 255, 0.7)',
                           borderTop: '1px solid rgba(255, 255, 255, 0.2)'

@@ -21,12 +21,13 @@ const Home = () => {
         url="vid/blockchain.mp4"
         overlayText1="Protecting Your Data Through 
 Decentralization"
-        overlayText2="ChainSmart Platform"
+        overlayText2="Using the power of
+blockchain technology"
         overlayImage="img/svg/logos.png"
       />
       <ParallaxProvider>
         <ContentBlock
-        direction="right"
+        direction="left"
         title={IntroContent.title}
         content={IntroContent.content}
         section={IntroContent.section}
