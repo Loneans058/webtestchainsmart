@@ -41,14 +41,14 @@ const news = [
       "Think of SmartShield as a digital vault in which you can safely lock away a copy of your most valuable information. It delivers protection for your data through the power of decentalization.",
     image: "/img/svg/image1.jpg",
     linkUrl: "https://www.youtube.com/watch?v=QEYgz4iK1A8" // Added link URL
-  },
+  }
 ];
 
 const VideoBlock = ({}: VideoBlockProps) => {
   return (
     <> 
     <HeroTitle>
-        Discover the power of blockchain with SmartShield! Our ChainSmart technology enables seamless transactions and enhances security for your operations. 
+      You've read it, now watch it! Our latest videos are waiting for you.
       </HeroTitle>
       <VideoBlockSection>
      

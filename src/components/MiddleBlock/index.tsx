@@ -107,7 +107,29 @@ const news = [
     title: "SmartShield: Your Secure Data Vault in the Cloud",
     content:
       "ChainSmart has developed a blockchain-based data integrity service called SmartShield. Think of SmartShield as a secure digital vault for your mission-critical information.The Need for a Second Level of Defence While you may have implemented various protection systems and processes to safeguard your central datastore, experience shows that first-level defences will inevitably be breached. This begs the question: what is your second level of defence? How do you quickly recover from an attack?",
-  }
+    link: "https://chainsmart.id/downloads/SmartShield Article-1_15Oct2024.pdf"
+  },
+  {
+    date: "14 Nov 2024",
+    title: "SmartShield Protects Your Stored Information and Published Documents",
+    content:
+      "If an organization issues documents to an external audience, SmartShield can be used to publish these documents directly from the trusted blockchain data. This allows third parties to then verify the authenticity of the documents to combat document fraud.",
+    link: "https://chainsmart.id/downloads/SmartShield Article-2_14Nov2024.pdf"
+  },
+  {
+    date: "22 Jan 2025",
+    title: "Ensuring the Integrity of the Retained Audit Trail of Your Business Transactions",
+    content:
+      "Every business generates an audit trail when conducting transactions. For instance, when a bank issues a loan to a customer, a record of the loan is created and stored Similarly, when an insurance company provides coverage to a customer, a trail of information is generated to document the policy and its conditions.",
+    link: "https://chainsmart.id/downloads/SmartShield Article-3_22Jan2025.pdf"
+  },
+  {
+    date: "09 Apr 2025",
+    title: "Using Blockchain to Reduce Disputes and Improve Efficiency Between Parties",
+    content:
+      "In today's interconnected business world, data fragmentation is a major challenge, leading to delayed decisions and increased disputes due to inconsistent information. We'll explore how blockchain technology offers a powerful solution, unifying disparate data sources for more efficient, transparent, and trustworthy partnerships.",
+    link: "https://chainsmart.id/downloads/SmartShield Article-4_9April2025.pdf"
+  },
 ];
 
 const MiddleBlock = ({ title, content, t }: MiddleBlockProps) => {
