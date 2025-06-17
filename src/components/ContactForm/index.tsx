@@ -130,7 +130,7 @@ const KnowMore = () => {
         <div>
           <p style={{ fontSize: "1rem", color: "#00d8ff", marginBottom: "0.5rem" }}>With Smartshield</p>
           <h2 style={{ fontSize: "2rem", fontWeight: "600", color: "#fff", marginBottom: "1rem" }}>
-            Benefit from state-of-the-art security features that protect your transactions and personal information.
+            You can think of SmartShield as a digital vault in which you can safely lock away a copy of your most valuable information.
           </h2>
         </div>
       </div>
