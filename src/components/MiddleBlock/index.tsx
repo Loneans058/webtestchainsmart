@@ -239,8 +239,8 @@ const MiddleBlock = ({ title, content, t }: MiddleBlockProps) => {
                       <NewsCard style={{ 
                         backgroundColor: getCardColor(activeIndex),
                         color: '#ffffff',
-                        width: '600px',
-                        height: '500px',
+                        width: '800px',
+                        height: '550px',
                       }}>
                         <NewsDate style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{news[activeIndex].date}</NewsDate>
                         <NewsTitle style={{ color: '#ffffff' }}>{news[activeIndex].title}</NewsTitle>
