@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player';
 import { motion } from 'framer-motion';
 
 interface VideoPlayerProps {
+  id: string;
   url: string;
   width?: string;
   height?: string;
@@ -133,6 +134,7 @@ const Card: React.FC<CardProps> = ({ image, title, description }) => (
 );
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
+  id,
   url,
   width = '100%',
   height = '100%',
@@ -147,7 +149,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   return (
     <div style={wrapperStyle}>
       <div style={playerStyle}>
-        <div style={playerWithCardsStyle}>
+        <div id={id} style={playerWithCardsStyle}>
           <ReactPlayer
             url={url}
             width={width}

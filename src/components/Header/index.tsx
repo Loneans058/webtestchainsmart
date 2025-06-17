@@ -120,7 +120,7 @@ const Header = ({ t }: { t: TFunction }) => {
       <Container>
       <Row justify="space-between">
         <LogoContainer to="/" aria-label="homepage">
-        <SvgIcon src="logos.png" width="240px" height="40px" />
+        <SvgIcon src="logos.png" width="180px" height="40px" />
         </LogoContainer>
         <NotHidden>
         <MenuItem />

@@ -18,6 +18,7 @@ const Home = () => {
     <Container>
       <ScrollToTop />
       <VideoPlayer
+        id="videos"
         url="vid/blockchain.mp4"
         overlayText1="Protecting Your Data Through 
 Decentralization"
